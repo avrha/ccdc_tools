@@ -22,7 +22,7 @@ x="lsb_release -d | cut -f 2"
 y=$(eval"$x")
 
 # Check if Ubuntu 14.04.06 is running
-if [[ $y = "Ubuntu 14.04.06 LTS" ]]
+if [[ $y = "Ubuntu 14.04.6 LTS" ]]
 then
   echo -e "${GREEN}-System Update Complete-"
   exit
