@@ -2,10 +2,6 @@
 
 # Set prompt colors 
 RED='\033[0;31m'
-GREEN='\u001b[32m'
-YELLOW='\u001b[33m'
-NC='\033[0m' 
-
 
 # Check UID for root.
 if [ "$EUID" -ne 0 ]
