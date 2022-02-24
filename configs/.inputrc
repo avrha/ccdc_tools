@@ -1,0 +1,12 @@
+#mute terminal bell
+set bell-style none
+
+#autocomplete
+TAB:menu-complete
+set show-all-if-ambiguous on
+set completion-ignore-case on
+set menu-complete-display-prefix on
+set colored-stats on
+
+#delete previous character
+"\C-h": backward-kill-word
