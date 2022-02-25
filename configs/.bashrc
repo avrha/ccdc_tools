@@ -1,3 +1,8 @@
+#comment out to start on default tmux
+#case $- in *i*)
+#  [ -z "$TMUX" ] && exec tmux -2
+#esac
+
 #ls aliases
 alias ls='ls --color'
 alias ll='ls -l --color'
