@@ -19,11 +19,11 @@ command w
 echo -e "-----------"
 
 echo -e "${YELLOW}New users:${NC}"
-command grep useradd /var/log/auth.log | grep "new user" > log.txt 
-tail -n 2 log.txt 
+command grep useradd /var/log/auth.log | grep "new user" > user_accounts.txt 
+tail -n 2 user_accounts.txt 
 echo -e "-----------"
 
 echo -e "${RED}Deleted users:${NC}" 
-command sudo grep userdel /var/log/auth.log | grep "delete user" > log.txt 
-tail -n 2  log.txt 
+command sudo grep userdel /var/log/auth.log | grep "delete user" > user_accounts.txt 
+tail -n 2  user_accounts.txt 
 echo -e "-----------"

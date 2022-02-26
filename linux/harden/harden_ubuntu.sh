@@ -14,10 +14,10 @@
 #
 
 # Set prompt colors 
-RED='\033[0;31m'
-GREEN='\u001b[32m'
-YELLOW='\u001b[33m'
-NC='\033[0m'
+RED=`tput setaf 1`                          # code for red console text
+GREEN=`tput setaf 2`                        # code for green text
+YELLOW=`tput setaf 3`                       # code for yellow text
+NC=`tput sgr0`                              # Reset the text color
 
 function update(){
 

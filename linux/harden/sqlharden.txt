@@ -1,0 +1,1 @@
+I'm lazy, just this guide: https://www.tecmint.com/mysql-mariadb-security-best-practices-for-linux/

@@ -18,6 +18,7 @@ if [ $EUID -ne 0 ]
 fi
  
 
+# Secure mysql: https://www.linode.com/docs/guides/how-to-secure-mysql-server/
 # Secure Ubuntu
 ./harden_ubuntu.sh
 
@@ -31,13 +32,14 @@ fi
 ./lock_down_files.sh
 
 # STIG Compliance
+touch /etc/security/pwquailty.conf
 ./apply_linux_stig.sh
 
 # Secure Network
 ./harden_networking.sh
 
-# Set firewall with iptables
-./harden_iptables.sh
+# Set firewall with UFW
+./harden_ufw.sh
 
 # Backup files
 ./backup_files.sh
