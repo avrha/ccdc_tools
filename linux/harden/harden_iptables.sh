@@ -49,16 +49,31 @@ iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP
 # Allow internal traffic on the loopback device
 # iptables -A INPUT -i lo -j ACCEPT
 
-# Allow access
+# Allow access input
 iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
-#iptables -A INPUT -p tcp -m tcp --dport 53 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 53 -j ACCEPT
 #iptables -A INPUT -p tcp -m tcp --dport 8443 -j ACCEPT
 #iptables -A INPUT -p tcp -m tcp --dport 139 -j ACCEPT
 #iptables -A INPUT -p tcp -m tcp --dport 5432 -j ACCEPT
 #iptables -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
 #iptables -A INPUT -p tcp -m tcp --dport 8443 -j ACCEPT
+
+
+# Allow access output
+iptables -A OUTPUT -p tcp -m tcp --dport 22 -j ACCEPT
+iptables -A OUTPUT -p tcp -m tcp --dport 80 -j ACCEPT
+iptables -A OUTPUT -p tcp -m tcp --dport 443 -j ACCEPT
+iptables -A OUTPUT -p tcp -m tcp --dport 53 -j ACCEPT
+
+
+# Allow ping
+iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -d 0/0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type 0 -s 0/0 -d 0/0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type 8 -s 0/0 -d 0/0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type 0 -s 0/0 -d 0/0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
 
 # Allow established connections
 # iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
