@@ -1,0 +1,40 @@
+
+[1m[34mChecking for NOPASSWD sudo commands... remove these lines if found![m
+
+[1m[34mChecking for !authenticate sudo commands... remove these lines if found![m
+
+[1m[34mChecking for user accounts without home directories... remove those if found![m
+user 'lp': directory '/var/spool/lpd' does not exist
+user 'news': directory '/var/spool/news' does not exist
+user 'uucp': directory '/var/spool/uucp' does not exist
+user 'www-data': directory '/var/www' does not exist
+user 'list': directory '/var/list' does not exist
+user 'irc': directory '/var/run/ircd' does not exist
+user 'gnats': directory '/var/lib/gnats' does not exist
+user 'nobody': directory '/nonexistent' does not exist
+pwck: no changes
+
+[1m[34mChecking for duplicate UID 0 accounts... remove those if found![m
+root
+
+[1m[34mChecking for files that have no owner... remove those if found![m
+/var/cache/private/fwupdmgr
+
+[1m[34mChecking for files that have no group... remove those if found![m
+/var/cache/private/fwupdmgr
+
+[1m[34mChecking permissions for user home directories... correct these if needed![m
+drwxr-xr-x 20 root  root  4096 Jan 29 00:53 /
+lrwxrwxrwx  1 root  root     7 Jan 29 00:52 /bin -> usr/bin
+drwxrwxr-x 32 avrha avrha 4096 Feb 25 20:29 /home/avrha
+drwxr-xr-x  2 root  root  4096 Apr 15  2020 /var/lib/misc
+
+[1m[34mChecking for world-writable files... remove these if found![m
+
+[1m[34mChecking for world-writable directories... remove these if found![m
+
+[1m[34mChecking the permissions of 'cron.allow'... this should be root![m
+
+[1m[34mChecking for .shosts files on the system... remove these if found![m
+
+[1m[34mChecking for a shots.equiv file on the system... remove this if found![m
